@@ -1,0 +1,18 @@
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.collapse {
+    display: flex;
+    justify-content: end;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    background-color: #198754;
+}
