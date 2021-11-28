@@ -26,11 +26,15 @@ const App = () => {
   const [contador, setContador] = useState(0)
   
   const incrementar = () => {
+    if (contador < 10) {
     setContador( contador + 1 )
+    }
   }
   
   const disminuir = () => {
+    if (contador > 0) {
     setContador ( contador - 1 )
+    }
   }
   
   return (
