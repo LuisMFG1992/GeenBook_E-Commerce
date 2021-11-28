@@ -1,9 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
-
-const text = ["Boton 1", "Boton 2", "Boton 3"]
 
 function App() {
   return (
