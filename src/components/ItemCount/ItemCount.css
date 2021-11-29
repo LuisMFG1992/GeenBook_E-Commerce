@@ -1,0 +1,26 @@
+.contenedorControles {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    margin: 0.5rem 0;
+}
+
+.contadorDeItems {
+    width: 4.5rem;
+}
+
+.controles {
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.controles:active,
+.AgregarAlCarrito:active {
+    transform: scale(0.9);
+}
+
+.AgregarAlCarrito {
+    border-radius: 1rem;
+    /* background: blue; */
+}
