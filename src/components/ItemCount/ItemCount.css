@@ -13,6 +13,8 @@
 .controles {
     width: 2rem;
     border-radius: 50%;
+    background: #212529;
+    color: white;
 }
 
 .controles:active,
@@ -22,5 +24,11 @@
 
 .AgregarAlCarrito {
     border-radius: 1rem;
-    /* background: blue; */
+    background: #212529;
+    color: white;
+}
+
+.controles:hover,
+.AgregarAlCarrito:hover {
+    background: #00680C;
 }
