@@ -3,6 +3,12 @@
 }
 
 .imgSide {
-    width: 250px;
-    height: 250px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    width: 140px;
+    height: 200px;
+}
+
+.justify-text {
+    text-justify: auto;
 }
