@@ -4,7 +4,7 @@ const Item = ({id, name, price, stock, picture, details, boton}) => {
 
     return (
         <div className="cardSide">   
-            <div className="card">
+            <div className="card" key={id}>
                 <img 
                     src={picture}
                     className="card-img-top imgSide"
