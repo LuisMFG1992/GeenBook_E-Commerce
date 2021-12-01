@@ -6,9 +6,9 @@ import ItemList from "../ItemList/ItemList"
 function getItems() {
     return (new Promise ((resolve, reject) => {
                 const products = [
-                        {id: 1, name: "Geen Book", price: 1000, stock:10},
-                        {id: 2, name: "Biblia", price: 2000, stock:20},
-                        {id: 3, name: "Divina comedia", price: 3000, stock:30},
+                        {id: 1, name: "Iphone 12 Pro Max", price: 39000, stock:12, picture:"https://www.macstation.com.ar/img/productos/small/1680-1111.jpg", details: "Memoria: 128 GB, Pantalla: 6.7, Cámara frontal: 12 Mpx, Cámara trasera: 12 Mpx, Reconocimiento facial: Si"},
+                        {id: 2, name: "Samsung S21 Ultra", price: 20000, stock:24, picture:"https://www.ktronix.com/medias/8806090953798-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wxNjI1Njl8aW1hZ2UvanBlZ3xpbWFnZXMvaDRiL2hiYS8xMDUxNzI4MTY2OTE1MC5qcGd8N2NhZGIxZWJiZTJhNDUyZGFjZjBlNTBlMjM3ZDMyNWEwMzFhYjk4MTdhMzZhZjEwZjA2MzFiY2Q3ZjY3OWFkOQ", details: ""},
+                        {id: 3, name: "Xiaomi Black Shark", price: 225000, stock:32,  picture:"https://i.blogs.es/e6966a/black-shark-3-3-pro-09/450_1000.jpg", details: ""},
                 ]
                 
                 setTimeout(() => {resolve(products)}, 2000)
@@ -42,3 +42,4 @@ const ItemListContainer = ({greeting}) => {
 }
 
 export default ItemListContainer
+
