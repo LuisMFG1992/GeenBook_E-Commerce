@@ -2,22 +2,23 @@ import './App.css';
 import { useEffect, useState } from 'react';
 // import ItemCount from './components/ItemCount/ItemCount';
 import NavBar from './components/NavBar/NavBar';
+import getItems from './components/Item/Item';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
-function getItems() {
-    return (new Promise ((resolve, reject) => {
-                const productos = [
-                        {id: 1, nombre: "Geen Book", precio: 1000, stock:10},
-                        {id: 2, nombre: "Biblia", precio: 2000, stock:20},
-                        {id: 3, nombre: "Divina comedia", precio: 3000, stock:30},
-                ]
+// function getItems() {
+//     return (new Promise ((resolve, reject) => {
+//                 const productos = [
+//                         {id: 1, nombre: "Geen Book", precio: 1000, stock:10},
+//                         {id: 2, nombre: "Biblia", precio: 2000, stock:20},
+//                         {id: 3, nombre: "Divina comedia", precio: 3000, stock:30},
+//                 ]
                 
-                setTimeout(() => {resolve(productos)}, 2000)
+//                 setTimeout(() => {resolve(productos)}, 2000)
                 
-            }
-        )   
-    )    
-}
+//             }
+//         )   
+//     )    
+// }
 
 const ItemList2 = ({items}) => {
     return (

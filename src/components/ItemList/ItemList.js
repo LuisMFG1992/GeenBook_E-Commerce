@@ -3,7 +3,11 @@
 
 // const ItemList = ({items}) => {
 //     return (
-//         <Item />
+//         <div>
+//           <ul>
+//             { items.map( i => <li key={i.id}>{i.nombre}</li> ) }
+//           </ul>
+//         </div>
 //     )
 // }
 
