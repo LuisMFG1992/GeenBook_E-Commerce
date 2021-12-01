@@ -1,10 +1,10 @@
-import "./ItemList.css"
-import Item from "../Item/Item"
+// import "./ItemList.css"
+// import Item from "../Item/Item"
 
-const ItemList = (items) => {
-    return (
-        <Item />
-    )
-}
+// const ItemList = ({items}) => {
+//     return (
+//         <Item />
+//     )
+// }
 
-export default ItemList
+// export default ItemList
