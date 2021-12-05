@@ -12,3 +12,11 @@
 .justify-text {
     text-justify: auto;
 }
+
+.card {
+    background: rgb(160, 160, 160);
+}
+
+.btn-success {
+    background: #075E14 !important;
+}

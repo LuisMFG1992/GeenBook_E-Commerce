@@ -1,3 +1,9 @@
 .aling {
     text-align: end !important;
 }
+
+.span {
+    font-weight: bold;
+    color: #075E14;
+    font-size: 1.1rem;
+}

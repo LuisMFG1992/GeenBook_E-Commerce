@@ -18,12 +18,12 @@ const Item = ({id, name, price, stock, picture, details, boton}) => {
                     <h6 className="card-title">Stock: {stock}</h6>
                     <p>
                     <a
-                        className="btn btn-primary"
-                        data-bs-toggle="collapse"
-                        href="#collapseExample"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
+                        className="btn btn-success"
+                        // data-bs-toggle="collapse"
+                        // href="#collapseExample"
+                        // role="button"
+                        // aria-expanded="false"
+                        // aria-controls="collapseExample"
                     >
                         Ver mas detalles
                     </a>
