@@ -14,8 +14,8 @@ const Item = ({id, name, price, stock, picture, details, boton}) => {
                     <h6 className="card-title">
                     {name}
                     </h6>
-                    <h7 className="card-title">Precio: {price}$ <br></br></h7>
-                    <h7 className="card-title">Stock: {stock}</h7>
+                    <h6 className="card-title">Precio: {price}$ <br></br></h6>
+                    <h6 className="card-title">Stock: {stock}</h6>
                     <p>
                     <a
                         className="btn btn-primary"
