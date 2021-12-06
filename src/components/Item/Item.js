@@ -17,7 +17,7 @@ const Item = ({id, name, price, stock, picture, details, boton}) => {
                     <h6 className="card-title">Precio: {price}$ <br></br></h6>
                     <h6 className="card-title">Stock: {stock}</h6>
                     <p>
-                    <a
+                    <a href="Item"
                         className="btn btn-success"
                         // data-bs-toggle="collapse"
                         // href="#collapseExample"

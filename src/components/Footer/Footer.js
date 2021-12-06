@@ -35,14 +35,8 @@ const Footer = () => {
                         </i>
                     </a>
                 </section>
+                <a className="text-white" href="https://mdbootstrap.com/">©2021 Copyright</a>
             </div>
-            
-
-            <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-                ©2021 Copyright
-                <a className="text-white" href="https://mdbootstrap.com/"></a>
-            </div>
-
         </footer>
     )
 }
