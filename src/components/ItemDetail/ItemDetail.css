@@ -7,3 +7,29 @@
     color: #075E14;
     font-size: 1.1rem;
 }
+
+.preloader {
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #666;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.preloaderContainer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}

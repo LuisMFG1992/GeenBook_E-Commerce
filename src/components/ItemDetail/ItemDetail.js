@@ -29,7 +29,11 @@ const ItemDetail = ({details}) => {
             
             : 
             
-            <h2 style={{color: "white"}}>Cargando...</h2>}
+            <div className="preloaderContainer">
+                <div className="preloader"></div>
+            </div>
+            
+            }
         </>
     )
 }
