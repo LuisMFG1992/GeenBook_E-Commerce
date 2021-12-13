@@ -1,0 +1,1 @@
+export const CATEGORIES = { Todo: "Todo", Action: "Action", Love: "Love", Thriler: "Thriler" }

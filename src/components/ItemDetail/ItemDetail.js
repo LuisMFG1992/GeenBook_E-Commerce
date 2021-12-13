@@ -29,8 +29,11 @@ const ItemDetail = ({details}) => {
             
             : 
             
-            <div className="preloaderContainer">
-                <div className="preloader"></div>
+            <div>
+                <h2 className="preloaderText">Cargando...</h2>
+                <div className="preloaderContainer">
+                    <div className="preloader"></div>
+                </div>
             </div>
             
             }

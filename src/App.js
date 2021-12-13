@@ -1,19 +1,39 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Footer from './components/Footer/Footer';
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Details from './Pages/Details/Details';
+import Contacto from './Pages/Contacto/Contacto';
+import Libros from './Pages/Libros/Libros';
+import Novedades from './Pages/Novedades/Novedades';
 
 const App = () => {  
 
   return (
-    <div className="App">
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer />
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        
+        <Route path="/" exact>
+          <Home />
+        </Route>
+
+        <Route path="/details/:id">
+          <Details />
+        </Route>
+
+        <Route path="/libros">
+          <Libros />
+        </Route>
+
+        <Route path="/novedades">
+          <Novedades />
+        </Route>
+
+        <Route path="/contacto">
+          <Contacto />
+        </Route>
+        
+      </Switch>
+    </Router>
   );
 }
 

@@ -30,6 +30,12 @@
 
 .preloaderContainer {
     display: flex;
+    height: 67.5vh;
     justify-content: center;
     padding: 2rem 0;
+    
+}
+
+.preloaderText {
+    color: white;
 }

@@ -3,25 +3,25 @@ import { useState, useEffect } from "react"
 import { products } from "../ItemListContainer/ItemListContainer"
 import ItemDetail from "../ItemDetail/ItemDetail"           
 
-const getItem = () => {
+const getItem = (id) => {
     return (new Promise ((resolve, reject) => {
-                setTimeout(() => {resolve(products[0])}, 2000)        
+                setTimeout(() => {resolve(products[id])}, 2000)        
             }
         )   
     )    
 }
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({id}) => {
 
     const [productItem, setproductItem] = useState([])
 
     useEffect(() => {
-        const detail = getItem()
+        const detail = getItem(id)
             detail.then((response) => {
             setproductItem(response)
         })
 
-    }, [])
+    }, [id])
 
     return (
         <>

@@ -40,8 +40,6 @@ const ItemCount = (props) => {
 
 export default ItemCount
 
-// TODO: Falta pasar los parametros a los botones y y ver como se añade el onAdd...
-
 
 
 
