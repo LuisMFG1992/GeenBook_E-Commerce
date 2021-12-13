@@ -1,17 +1,17 @@
 import "./CategoryFilter.css"
 import { CATEGORIES } from "./Const";
 
-const CategoryFilter = ({setFilter}) => {
+const CategoryFilter = ({ category }) => {
 
     const onChange = (e) => {
         const selectedValue = e.target.value
-        setFilter(selectedValue)
+        window.location.href = `/category/${selectedValue}` 
     }
 
     return ( 
         <>
             <label style={{color: "white", fontSize: 30, marginRight:  10}}>Filtrar por: </label>
-            <select onChange={onChange}>
+            <select defaultValue={category} onChange={onChange}>
                 <option value={CATEGORIES.Todo}>Todo</option>
                 <option value={CATEGORIES.Action}>Action</option>
                 <option value={CATEGORIES.Love}>Love</option>

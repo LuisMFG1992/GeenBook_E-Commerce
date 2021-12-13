@@ -16,6 +16,10 @@ const App = () => {
           <Home />
         </Route>
 
+        <Route path="/category/:category">
+          <Home />
+        </Route>
+
         <Route path="/details/:id">
           <Details />
         </Route>

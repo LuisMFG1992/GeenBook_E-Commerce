@@ -2,17 +2,18 @@ import NavBar from "../../components/NavBar/NavBar";
 import CategoryFilter from "../../components/CategoryFilter/CategoryFilter";
 import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 import Footer from "../../components/Footer/Footer";
-import { useState } from "react";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { CATEGORIES } from "../../components/CategoryFilter/Const";
 
 const Home = () => {
 
-    const [filter, setFilter] = useState("Todo")
+    const { category } = useParams()
 
     return ( 
         <div className="App">
             <NavBar />
-            <CategoryFilter setFilter={setFilter}/>
-            <ItemListContainer filter={filter} />
+            <CategoryFilter category={category || CATEGORIES.Todo}/>
+            <ItemListContainer />
             <Footer />
         </div>
      );

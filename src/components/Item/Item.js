@@ -1,6 +1,6 @@
 import "./Item.css"
 
-const Item = ({id, name, price, stock, picture, details, boton}) => {
+const Item = ({id, name, price, stock, picture, details}) => {
 
     return (
         <div className="cardSide">   
@@ -17,7 +17,7 @@ const Item = ({id, name, price, stock, picture, details, boton}) => {
                     <h6 className="card-title">Precio: {price}$ <br></br></h6>
                     <h6 className="card-title">Stock: {stock}</h6>
                     <p>
-                    <a href={`details/${id}`} className="btn btn-success">Ver mas detalles</a>
+                    <a href={`/details/${id}`} className="btn btn-success">Ver mas detalles</a>
                     </p>
 
                     <div className="collapse" id="collapseExample">

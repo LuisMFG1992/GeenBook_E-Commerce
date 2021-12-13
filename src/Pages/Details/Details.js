@@ -3,6 +3,7 @@ import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetail
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
+
 const Details = () => {
 
     const { id } = useParams() 
