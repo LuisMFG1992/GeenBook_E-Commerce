@@ -33,7 +33,7 @@ const ItemListContainer = () => {
             setProductsList(response)
         })
 
-    }, [])
+    }, [category])
 
     useEffect(() => {
         
@@ -44,7 +44,7 @@ const ItemListContainer = () => {
             case CATEGORIES.Action:
                 newProductList = productList.filter( book => book.category === CATEGORIES.Action )
                 setFilteredProductList(newProductList)
-                break;
+                break
         
             case CATEGORIES.Love:
                 newProductList = productList.filter( book => book.category === CATEGORIES.Love )
