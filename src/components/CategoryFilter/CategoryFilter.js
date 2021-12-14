@@ -5,7 +5,7 @@ const CategoryFilter = ({ category }) => {
 
     const onChange = (e) => {
         const selectedValue = e.target.value
-        window.location.href = `/category/${selectedValue}` 
+        window.location.href = `/category/${selectedValue}`
     }
 
     return ( 
