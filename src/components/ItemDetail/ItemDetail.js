@@ -1,8 +1,15 @@
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
-
+import { NavLink } from "react-router-dom"
+import { useState } from "react"
 
 const ItemDetail = ({details}) => {
+
+    const [productCounter, setProductCounter] = useState()
+
+    const onAdd = (count) => {
+        setProductCounter(count)
+    }
     
     return(
 
@@ -20,7 +27,7 @@ const ItemDetail = ({details}) => {
                             <h1 className="card-title">{details.name}</h1>
                             <p className="card-text aling">{details.details}</p>
                             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                                <ItemCount stock={details.stock} inicial={1} onAdd="Cantidad de productos agregados al carrito:"/>
+                                {productCounter > 0 ? <NavLink to={"/cart"}>Finalizar Compra</NavLink> : <ItemCount stock={details.stock} inicial={1} onAdd={onAdd}/>}
                                 <div>
                                 <p className="card-text aling">Idioma: <span className="span">{details.language}</span></p>
                                 <p className="card-text aling">Autor: <span className="span">{details.author}</span></p>

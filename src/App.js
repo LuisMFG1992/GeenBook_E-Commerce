@@ -5,6 +5,7 @@ import Details from './Pages/Details/Details';
 import Contacto from './Pages/Contacto/Contacto';
 import Libros from './Pages/Libros/Libros';
 import Novedades from './Pages/Novedades/Novedades';
+import Cart from "./components/Cart/Cart"
 
 const App = () => {  
 
@@ -18,6 +19,10 @@ const App = () => {
 
         <Route path="/category/:category">
           <Home />
+        </Route>
+
+        <Route path="/cart">
+          <Cart />
         </Route>
 
         <Route path="/details/:id">

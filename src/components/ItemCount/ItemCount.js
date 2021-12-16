@@ -4,9 +4,14 @@ import { useState } from 'react';
 
 const ItemCount = (props) => {
       
+
   const {stock, inicial, onAdd } = props
     
   const [contador, setContador] = useState(inicial)
+
+  const handleCardProducts = () => {
+    onAdd(contador)
+  }
   
   const incrementar = () => {
     if (contador < stock) {
@@ -22,9 +27,9 @@ const ItemCount = (props) => {
     }
   }
 
-  const agregar = () => {
-    console.log(`${onAdd} ${contador}`)
-  }
+  // const agregar = () => {
+  //   console.log(`${onAdd} ${contador}`)
+  // }
 
   return (
       <div>
@@ -33,7 +38,8 @@ const ItemCount = (props) => {
               <h3 className="contadorDeItems">{contador}</h3>
               <button className="controles" onClick={disminuir}>-</button>
           </div>
-          <button className="AgregarAlCarrito" onClick={agregar}>Agregar al carrito</button>
+          <button className="AgregarAlCarrito" onClick={handleCardProducts}>Agregar al carrito</button>
+          {/* <button className="AgregarAlCarrito" onClick={agregar}>Agregar al carrito</button> */}
       </div>
   )
 }
