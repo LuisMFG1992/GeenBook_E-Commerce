@@ -6,43 +6,46 @@ import Contacto from './Pages/Contacto/Contacto';
 import Libros from './Pages/Libros/Libros';
 import Novedades from './Pages/Novedades/Novedades';
 import Cart from "./components/Cart/Cart"
+import { ProveedorTema } from './Context/CartContext';
 
 const App = () => {  
 
   return (
-    <Router>
-      <Switch>
-        
-        <Route path="/" exact>
-          <Home />
-        </Route>
+    <ProveedorTema>
+      <Router>
+        <Switch>
+          
+          <Route path="/" exact>
+            <Home />
+          </Route>
 
-        <Route path="/category/:category">
-          <Home />
-        </Route>
+          <Route path="/category/:category">
+            <Home />
+          </Route>
 
-        <Route path="/cart">
-          <Cart />
-        </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
 
-        <Route path="/details/:id">
-          <Details />
-        </Route>
+          <Route path="/details/:id">
+            <Details />
+          </Route>
 
-        <Route path="/libros">
-          <Libros />
-        </Route>
+          <Route path="/libros">
+            <Libros />
+          </Route>
 
-        <Route path="/novedades">
-          <Novedades />
-        </Route>
+          <Route path="/novedades">
+            <Novedades />
+          </Route>
 
-        <Route path="/contacto">
-          <Contacto />
-        </Route>
-        
-      </Switch>
-    </Router>
+          <Route path="/contacto">
+            <Contacto />
+          </Route>
+          
+        </Switch>
+      </Router>
+    </ProveedorTema>
   );
 }
 

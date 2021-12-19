@@ -1,9 +1,16 @@
 import "./ItemCount.css"
 import { useState } from 'react';
-
+import { ContextoTema } from "../../Context/CartContext";
+import { useContext } from "react";
 
 const ItemCount = (props) => {
-      
+
+  
+  
+  const nombre = useContext(ContextoTema)
+  console.log(nombre.nombre)
+
+
 
   const {stock, inicial, onAdd } = props
     
@@ -27,10 +34,6 @@ const ItemCount = (props) => {
     }
   }
 
-  // const agregar = () => {
-  //   console.log(`${onAdd} ${contador}`)
-  // }
-
   return (
       <div>
           <div className="contenedorControles">
@@ -39,39 +42,8 @@ const ItemCount = (props) => {
               <button className="controles" onClick={disminuir}>-</button>
           </div>
           <button className="AgregarAlCarrito" onClick={handleCardProducts}>Agregar al carrito</button>
-          {/* <button className="AgregarAlCarrito" onClick={agregar}>Agregar al carrito</button> */}
       </div>
   )
 }
 
 export default ItemCount
-
-
-
-
-
-
-
-// const useContador = () => {
-//   const [contador, setContador] = useState(0)
-  
-//   const incrementar = () => {
-//         if (contador < 10) {
-      //   setContador( contador + 1 )
-      // } else {
-      //   alert("No hay sufiente stock disponible.")
-      // }
-//   }
-  
-//   const disminuir = () => {
-        // if (contador > 1) {
-        //   setContador ( contador - 1 )
-        //  }
-//   }
-  
-//   return( contador, incrementar, disminuir )
-  
-// }
-
-// const ItemCount = (props) => {
-  // const { contador, incrementar, disminuir } = useContador()
