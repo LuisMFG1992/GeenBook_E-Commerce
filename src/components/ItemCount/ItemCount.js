@@ -7,8 +7,8 @@ const ItemCount = (props) => {
 
   
   
-  const nombre = useContext(ContextoTema)
-  console.log(nombre.nombre)
+  const {productosDeCarrito} = useContext(ContextoTema)
+  console.log(productosDeCarrito)
 
 
 
