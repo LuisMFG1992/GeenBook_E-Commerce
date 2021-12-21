@@ -5,21 +5,43 @@ import { useContext } from "react";
 
 const ItemCount = (props) => {
 
+  const {stock, inicial, onAdd, products } = props
+
+  const {carProducts, addItem, isInCart, addQuantity} = useContext(ContextoTema)
   
-  
-  const {productosDeCarrito} = useContext(ContextoTema)
-  console.log(productosDeCarrito)
-
-
-
-  const {stock, inicial, onAdd } = props
-    
   const [contador, setContador] = useState(inicial)
 
   const handleCardProducts = () => {
+
     onAdd(contador)
+
+    const {id, name, price} = products
+    
+    const carProduct = {
+      id,
+      name,
+      price,
+      quantity: 1
+    }
+
+    const verification = isInCart(id)
+
+    if (verification) {
+
+      // addQuantity(id)
+
+    } else {
+
+      addItem(carProduct)
+      console.log("El producto se añadio al carrito")
+      
+    }
   }
-  
+
+
+
+  console.log(carProducts)
+
   const incrementar = () => {
     if (contador < stock) {
       setContador( contador + 1 )

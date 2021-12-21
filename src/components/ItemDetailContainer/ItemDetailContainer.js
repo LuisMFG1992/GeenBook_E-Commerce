@@ -1,17 +1,12 @@
 import "./ItemDetailContainer.css"
 import { useState, useEffect } from "react"
-import { products } from "../ItemListContainer/ItemListContainer"
+import { useContext } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"           
-
-const getItem = (id) => {
-    return (new Promise ((resolve, reject) => {
-                setTimeout(() => {resolve(products[id])}, 2000)        
-            }
-        )   
-    )    
-}
+import { ContextoTema } from "../../Context/CartContext"
 
 const ItemDetailContainer = ({id}) => {
+
+    const {getItem} = useContext(ContextoTema)
 
     const [productItem, setproductItem] = useState([])
 
@@ -21,7 +16,7 @@ const ItemDetailContainer = ({id}) => {
             setproductItem(response)
         })
 
-    }, [id])
+    }, [id, getItem])
 
     return (
         <>
