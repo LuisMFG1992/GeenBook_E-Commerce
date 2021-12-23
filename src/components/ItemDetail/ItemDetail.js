@@ -17,7 +17,7 @@ const ItemDetail = ({details}) => {
         <>
             {details.name !== undefined ?
             
-            <div className="card mb-3" style={{maxWidth: 1000, height: 420, margin: "auto", marginTop:30, paddingTop: 30}}>
+            <div className="card mb-3" style={{maxWidth: 1000, height: 420, margin: "auto", paddingTop: 30}}>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img style={{ width: 220 }} src={details.picture} className="img-fluid rounded-start" alt="..."/>

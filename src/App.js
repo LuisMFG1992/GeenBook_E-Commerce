@@ -5,14 +5,19 @@ import Details from './Pages/Details/Details';
 import Contacto from './Pages/Contacto/Contacto';
 import Libros from './Pages/Libros/Libros';
 import Novedades from './Pages/Novedades/Novedades';
-import Cart from "./components/Cart/Cart"
+import Cart from "./Pages/Cart/Cart"
 import { ProveedorTema } from './Context/CartContext';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 
 const App = () => {  
 
   return (
     <ProveedorTema>
       <Router>
+
+        <NavBar />
+        
         <Switch>
           
           <Route path="/" exact>
@@ -44,6 +49,7 @@ const App = () => {
           </Route>
           
         </Switch>
+        <Footer />
       </Router>
     </ProveedorTema>
   );

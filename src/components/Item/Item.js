@@ -1,4 +1,5 @@
 import "./Item.css"
+import { NavLink } from "react-router-dom"
 
 const Item = ({id, name, price, stock, picture, details}) => {
 
@@ -17,7 +18,7 @@ const Item = ({id, name, price, stock, picture, details}) => {
                     <h6 className="card-title">Precio: {price}$ <br></br></h6>
                     <h6 className="card-title">Stock: {stock}</h6>
                     <p>
-                    <a href={`/details/${id}`} className="btn btn-success">Ver mas detalles</a>
+                    <NavLink to={`/details/${id}`} className="btn btn-success">Ver mas detalles</NavLink>
                     </p>
 
                     <div className="collapse" id="collapseExample">
