@@ -14,7 +14,7 @@ const ProveedorTema = ({children}) => {
 
     //TODO: COMO QUITAR EL ERROR
     //TODO: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-    
+
     let totalQuantity = 0
 
     carProducts.forEach( product => {
@@ -81,6 +81,9 @@ const ProveedorTema = ({children}) => {
     }
 
     console.log(carProducts)
+
+    const sumAllPrices = carProducts.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
+    console.log(sumAllPrices);
 
     // SUMANDO PRECIO PARA OBTENER EL TOTAL DEL CARRITO
 
