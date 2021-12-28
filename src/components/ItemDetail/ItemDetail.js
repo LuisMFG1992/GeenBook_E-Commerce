@@ -12,7 +12,7 @@ const ItemDetail = ({details}) => {
         setProductCounter(count)
     }
     
-    console.log(productCounter)
+    // console.log(productCounter)
 
     return(
 

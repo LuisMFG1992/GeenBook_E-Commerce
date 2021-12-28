@@ -5,22 +5,26 @@ import "./Cart.css"
 
 const Cart = () => {
 
-    const { carProducts } = useContext(ContextoTema);
+    const { carProducts, totalQuantity } = useContext(ContextoTema);
+    
+    const totalPrice = carProducts.reduce( (a,c) =>  a + c.price * c.quantity, 0) 
+
 
     return (
+
         <>
         {carProducts.length === 0 ? 
-            <>
-                <h1>Cart is empty</h1> 
+            <div className="App container-fluid" style={{minHeight: "80vh"}}>
+                <h1 style={{color: "white"}}>Cart is empty</h1> 
                 <Link to="/">
                     Home
                 </Link>
-            </>
+            </div>
         
         : 
         
         <div className="App container-fluid" style={{minHeight: "80vh"}}>
-            <div className="cartContainer">
+            <div className="cartContainer" style={{ background: "rgb(160, 160, 160)"}}>
                 <table className="table">
                     <thead>
                         <tr>
@@ -33,7 +37,6 @@ const Cart = () => {
                     <tbody>
                             {carProducts.map( element => {
                                 return(
-                                    <>
                                         <tr key={element.id}>
                                             <td>
                                                 <img src={element.picture} alt={element.name} style={{width: "2rem"}}/>
@@ -42,16 +45,22 @@ const Cart = () => {
                                             <td>{element.price}</td>
                                             <td>{element.quantity}</td>
                                             <td>
-                                                <button className="btn btn-primary">
+                                                <button className="btn btn-danger">
                                                     Remove
                                                 </button>
                                             </td>
-
                                         </tr>
-                                    </>
                                 )
                             })}
-
+                            <tr>
+                                <td>{""}</td>
+                                <td>Total Productos</td>
+                                <td>{totalPrice}</td>
+                                <td>{totalQuantity}</td>
+                                <td>
+                                    <button className="btn btn-success">Pay</button>
+                                </td>
+                            </tr>
                     </tbody>
                 </table>
             </div>

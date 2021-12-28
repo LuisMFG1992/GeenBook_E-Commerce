@@ -81,7 +81,7 @@ const ProveedorTema = ({children}) => {
         
     }
 
-    console.log(carProducts)
+    // console.log(carProducts)
 
     
 
