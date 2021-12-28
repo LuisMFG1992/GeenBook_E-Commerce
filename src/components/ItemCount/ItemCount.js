@@ -6,9 +6,9 @@ import { useContext } from "react";
 const ItemCount = (props) => {
 
   
-  const {stock, inicial, products } = props
+  const {stock, inicial, products, onAdd } = props
 
-  const {id, name, price} = products
+  const {id, name, price, picture } = products
 
   const {addProductToCar} = useContext(ContextoTema)
   
@@ -36,8 +36,10 @@ const ItemCount = (props) => {
               <h3 className="contadorDeItems">{contador}</h3>
               <button className="controles" onClick={disminuir}>-</button>
           </div>
-          <button className="AgregarAlCarrito" onClick={() => {addProductToCar(id, name, price, contador)}}>Agregar al carrito</button>
-          {/* <div>{totalPriceCartCounter * contador}</div> */}
+          <button className="AgregarAlCarrito" onClick={() => {
+            addProductToCar(id, name, price, contador, picture) 
+            onAdd(contador)
+          }}>Agregar al carrito</button>
       </div>
   )
 }

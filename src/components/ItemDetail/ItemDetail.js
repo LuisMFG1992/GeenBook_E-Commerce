@@ -12,6 +12,8 @@ const ItemDetail = ({details}) => {
         setProductCounter(count)
     }
     
+    console.log(productCounter)
+
     return(
 
         <>
@@ -28,7 +30,13 @@ const ItemDetail = ({details}) => {
                             <h1 className="card-title">{details.name}</h1>
                             <p className="card-text aling">{details.details}</p>
                             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                                {productCounter > 0 ? <NavLink to={"/cart"}>Finalizar Compra</NavLink> : <ItemCount products={details} stock={details.stock} inicial={1} onAdd={onAdd}/>}
+                                {productCounter > 0 
+                                ? 
+                                    <button className="btn btn-success">
+                                        <NavLink to={"/cart"} style={{color: "white"}}>Finalizar Compra</NavLink> 
+                                    </button>
+                                :
+                                 <ItemCount products={details} stock={details.stock} inicial={1} onAdd={onAdd}/>}
                                 <div>
                                 <p className="card-text aling">Idioma: <span className="span">{details.language}</span></p>
                                 <p className="card-text aling">Autor: <span className="span">{details.author}</span></p>

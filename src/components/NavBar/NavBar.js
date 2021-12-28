@@ -1,9 +1,17 @@
 import "./NavBar.css"
 import CarWidget from '../CarWidget/CarWidget';
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { ContextoTema } from "../../Context/CartContext";
 
 const NavBar = () => {
+
+    const { carProducts } = useContext(ContextoTema)
+
+    
     return (
+        <>
+     
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-dark">
                 <div className="container-fluid">
@@ -30,14 +38,21 @@ const NavBar = () => {
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
+                    {carProducts.length === 0 ? 
+                        <ul className="navbar-nav" style={{opacity: "0.3"}}>
+                            <CarWidget/>
+                        </ul> 
+                    : 
                         <ul className="navbar-nav">
                             <CarWidget/>
                         </ul>
+                    }
                     </div>
                 </div>
             </nav>
 
         </div>
+        </>
     )
 }
 

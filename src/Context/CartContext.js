@@ -30,18 +30,17 @@ const ProveedorTema = ({children}) => {
         )    
     }
 
-    const addProductToCar = (id, name, price, contador) => {
+    const addProductToCar = (id, name, price, contador, picture) => {
 
         // Si no hay productos en el carrito entonces agregar 1
 
         if (carProducts.length === 0) {
             setCarProducts(
-                [{id: id, name: name, price: price, quantity: contador}]
+                [{id: id, name: name, price: price, quantity: contador, picture: picture}]
             )
 
             setCartWidgetQuantity(contador)
 
-            // console.log(carProducts)
 
         } else {
             // Si el producto que intentamos agregar ya existe entonces actualizar quantity
@@ -57,7 +56,7 @@ const ProveedorTema = ({children}) => {
                 newCarProducts.forEach((product, index) => {
                     if (product.id === id) {
                         const quantity = newCarProducts[index].quantity
-                        newCarProducts[index] = {id:id, name: name, quantity: quantity + contador}
+                        newCarProducts[index] = {id:id, name: name, price: price, picture: picture, quantity: quantity + contador}
                     }
                 })
 
@@ -67,6 +66,8 @@ const ProveedorTema = ({children}) => {
                     {
                         id: id,
                         name: name,
+                        price: price,
+                        picture: picture,
                         quantity: contador
                     }
                 )
@@ -81,17 +82,6 @@ const ProveedorTema = ({children}) => {
     }
 
     console.log(carProducts)
-
-    const sumAllPrices = carProducts.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
-    console.log(sumAllPrices);
-
-    // SUMANDO PRECIO PARA OBTENER EL TOTAL DEL CARRITO
-
-    // let totalPriceCartCounter = 0
-
-    // carProducts.forEach( product => {
-    //     totalPriceCartCounter += product.price
-    // });
 
     
 
