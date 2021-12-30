@@ -1,3 +1,4 @@
+import React from "react";
 import "./CategoryFilter.css"
 import { CATEGORIES } from "./Const";
 

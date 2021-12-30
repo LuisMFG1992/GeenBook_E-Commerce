@@ -1,3 +1,4 @@
+import React from "react";
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { NavLink } from "react-router-dom"
@@ -63,6 +64,5 @@ const ItemDetail = ({details}) => {
     )
 }
 
-<span className="span"></span>
 
 export default ItemDetail
