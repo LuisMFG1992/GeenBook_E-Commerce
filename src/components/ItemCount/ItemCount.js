@@ -38,9 +38,11 @@ const ItemCount = (props) => {
               <button className="controles" onClick={disminuir}>-</button>
           </div>
           <button className="AgregarAlCarrito" onClick={() => {
-            addProductToCar(id, name, price, contador, picture) 
-            onAdd(contador)
-          }}>Agregar al carrito</button>
+              addProductToCar(id, name, price, contador, picture) 
+              onAdd(contador)
+            }}>Agregar al carrito
+          </button>
+          <p>Disponible: {stock}</p>
       </div>
   )
 }

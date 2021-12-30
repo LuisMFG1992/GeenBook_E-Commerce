@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { useContext } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"           
 import { ContextoTema } from "../../Context/CartContext"
+import { getDoc, doc } from "firebase/firestore"
+import { db } from "../../Firebase/FirebaseConfig"
 
 const ItemDetailContainer = ({id}) => {
 
@@ -12,9 +14,10 @@ const ItemDetailContainer = ({id}) => {
     const [productItem, setproductItem] = useState([])
 
     useEffect(() => {
-        const detail = getItem(id)
-            detail.then((response) => {
-            setproductItem(response)
+       
+        getDoc(doc(db, "products", id)).then(querySnapshot => {
+            const fbProduct = {id: querySnapshot.id, ...querySnapshot.data()}
+            setproductItem(fbProduct)
         })
 
     }, [id, getItem])
@@ -27,3 +30,8 @@ const ItemDetailContainer = ({id}) => {
 }
 
 export default ItemDetailContainer
+
+// const detail = getItem(id)
+// detail.then((response) => {
+// setproductItem(response)
+// })
