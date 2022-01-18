@@ -79,7 +79,6 @@ const ProveedorTema = ({children}) => {
         
     }
 
-    // console.log(carProducts)
 
     
 
