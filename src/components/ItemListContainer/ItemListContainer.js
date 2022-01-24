@@ -27,7 +27,7 @@ const ItemListContainer = () => {
 
     }, [])
 
-    console.log(`Productos Firebase =>`, productList)
+    // console.log(`Productos Firebase =>`, productList)
 
     useEffect(() => {
         

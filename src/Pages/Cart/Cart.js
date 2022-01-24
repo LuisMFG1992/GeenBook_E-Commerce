@@ -3,33 +3,36 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextoTema } from "../../Context/CartContext";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../Firebase/FirebaseConfig";
+// import { addDoc, collection } from "firebase/firestore";
+// import { db } from "../../Firebase/FirebaseConfig";
 
 
 const Cart = () => {
+    
+    const { carProducts, totalQuantity } = useContext(ContextoTema);
 
-    const objOrder = {
-        // TODO: Debo linkear esta funcion con el boton de comprar del carrito
-        // ? Es necesario hacer un formulario esto ?
-        buyer: "Luis",
-        // TODO: Traer el listado de productos
-        items: "Libro",
-        // TODO: Traer el total de items
-        total: "4",
-        phone: "123",
-        address: "ABC",
-        comment: "X"
+    const fecha = new Date()
+
+    const totalPrice = carProducts.reduce( (a,c) =>  a + c.price * c.quantity, 0) 
+
+    const sendOrder = () => {
+      
+        const objOrder = {
+            buyer: "Luis",
+            // TODO: Traer el listado de productos
+            items: "",
+            date: fecha.toUTCString(),
+            numberOfItems: totalQuantity,
+            total: totalPrice
+        };
+    
+        console.log('objOrder', objOrder);
+        
+        // addDoc(collection(db, "orders"), objOrder).then(({id}) =>{
+        //     console.log(id)
+        // })    
     };
     
-    addDoc(collection(db, "orders"), objOrder).then(({id}) =>{
-        console.log(id)
-    })
-    
-
-    const { carProducts, totalQuantity } = useContext(ContextoTema);
-    
-    const totalPrice = carProducts.reduce( (a,c) =>  a + c.price * c.quantity, 0) 
 
 
     return (
@@ -80,7 +83,7 @@ const Cart = () => {
                                 <td>{totalPrice}</td>
                                 <td>{totalQuantity}</td>
                                 <td>
-                                    <button className="btn btn-success">Pay</button>
+                                    <button className="btn btn-success" onClick={sendOrder}>Pay</button>
                                 </td>
                             </tr>
                     </tbody>
