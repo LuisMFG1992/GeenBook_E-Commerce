@@ -1,32 +1,25 @@
 import React from "react";
 import react from "react";
 import { useState } from "react";
-import { products } from "../components/ItemListContainer/ItemListContainer";
 
 const ContextoTema = react.createContext()
 
+
 const ProveedorTema = ({children}) => {
-
+    
     const [carProducts, setCarProducts] = useState([])
-
+    
     const [cartWidgetQuantity, setCartWidgetQuantity] = useState(0)
-
-    // const [totalPriceCart, setTotalPriceCart] = useState(0)
-
+    
     let totalQuantity = 0
-
+    
     carProducts.forEach( product => {
         totalQuantity += product.quantity
     });
+    
 
 
-    const getItem = (id) => {
-        return (new Promise ((resolve, reject) => {
-                    setTimeout(() => {resolve(products[id])}, 2000)        
-                }
-            )   
-        )    
-    }
+
 
     const addProductToCar = (id, name, price, contador, picture) => {
 
@@ -79,7 +72,6 @@ const ProveedorTema = ({children}) => {
         
     }
 
-    // console.log(carProducts)
 
     
 
@@ -118,7 +110,6 @@ const ProveedorTema = ({children}) => {
     return (
         <ContextoTema.Provider value={{ 
             setCarProducts,
-            getItem,
             addItem,
             removeItem,
             clear,
