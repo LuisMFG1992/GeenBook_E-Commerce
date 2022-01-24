@@ -1,10 +1,31 @@
+import "./Cart.css"
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextoTema } from "../../Context/CartContext";
-import "./Cart.css"
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../Firebase/FirebaseConfig";
+
 
 const Cart = () => {
+
+    const objOrder = {
+        // TODO: Debo linkear esta funcion con el boton de comprar del carrito
+        // ? Es necesario hacer un formulario esto ?
+        buyer: "Luis",
+        // TODO: Traer el listado de productos
+        items: "Libro",
+        // TODO: Traer el total de items
+        total: "4",
+        phone: "123",
+        address: "ABC",
+        comment: "X"
+    };
+    
+    addDoc(collection(db, "orders"), objOrder).then(({id}) =>{
+        console.log(id)
+    })
+    
 
     const { carProducts, totalQuantity } = useContext(ContextoTema);
     
