@@ -3,8 +3,8 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextoTema } from "../../Context/CartContext";
-// import { addDoc, collection } from "firebase/firestore";
-// import { db } from "../../Firebase/FirebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../Firebase/FirebaseConfig";
 
 
 const Cart = () => {
@@ -19,18 +19,16 @@ const Cart = () => {
       
         const objOrder = {
             buyer: "Luis",
-            // TODO: Traer el listado de productos
-            items: "",
+            items: carProducts,
             date: fecha.toUTCString(),
             numberOfItems: totalQuantity,
             total: totalPrice
         };
-    
-        console.log('objOrder', objOrder);
         
-        // addDoc(collection(db, "orders"), objOrder).then(({id}) =>{
-        //     console.log(id)
-        // })    
+        //** FUNCION PARA CREAR ORDEN EN FIREBASE */
+        addDoc(collection(db, "orders"), objOrder).then(({id}) =>{
+            console.log(id)
+        })    
     };
     
 
